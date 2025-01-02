@@ -1,0 +1,30 @@
+{% extends 'uindx.html' %}
+{% block cnt %}
+<div id="pricing" class="pricing-tables">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 offset-lg-2">
+        <div class="section-heading">
+          <h4>We Have The Best Experienced  <em>Psychologists</em> You Can Interact</h4>
+          <img src="assets/images/heading-line-dec.png" alt="">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eismod tempor incididunt ut labore et dolore magna.</p>
+        </div>
+      </div>
+      {% for i in p %}
+      <div class="col-lg-4">
+        <div class="pricing-item-regular">
+          <!--<span class="price">$12</span>-->
+          <h4>{{i.pname}}</h4>
+          <div class="icon">
+            <img src="{{i.pprf.url}}" alt="">
+          </div>
+          <div class="border-button">
+            <a href="{% url 'psng' i.id %}">View More Info</a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% endblock %}

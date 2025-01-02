@@ -1,0 +1,58 @@
+{% extends 'authindx.html' %}
+{% block atcnt %}
+<div class="col-xl-8 col-md-12">
+    <div class="card table-card">
+        <div class="card-header">
+            <h5>Bookings</h5>
+            <div class="card-header-right">
+                <ul class="list-unstyled card-option">
+                    <li><i class="fa fa fa-wrench open-card-option"></i></li>
+                    <li><i class="fa fa-window-maximize full-card"></i></li>
+                    <li><i class="fa fa-minus minimize-card"></i></li>
+                    <li><i class="fa fa-refresh reload-card"></i></li>
+                    <!--<li><i class="fa fa-trash close-card"></i></li>-->
+                </ul>
+            </div>
+        </div>
+        <div class="card-block">
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Mail</th>
+                        <th>Subject</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Apr</th>
+                        <th>Dec</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for i in inf %}
+                    <tr>
+                        <td>
+                            
+                            <div class="d-inline-block align-middle">
+                                <div class="d-inline-block">
+                                    <h6>{{i.uid.uname}}</h6>
+                                    
+                                </div>
+                            </div>
+                        </td>
+                        <td>{{i.uid.umail}}</td>
+                        <td>{{i.sub}}</td>
+                        <td>{{i.dte}}</td>
+                        <td>{{i.tme}}</td>
+                        <td><a href="{% url 'atapnapr' i.id %}"><button>Apr</button></a></td>
+                        <td><a href="{% url 'atapndec' i.id %}"><button>Dec</button></a></td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

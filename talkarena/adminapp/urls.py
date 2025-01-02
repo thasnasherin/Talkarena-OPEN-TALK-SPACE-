@@ -1,0 +1,30 @@
+from django.urls import path
+from adminapp import views
+
+urlpatterns = [
+    path('ai',views.ai,name='ai'),
+    path('frm',views.frm,name='frm'),
+    path('tab',views.tab,name='tab'),
+    path('rinfo',views.rinfo,name='rinfo'),
+    path('contp',views.contp,name='contp'),
+    path('pinfo',views.pinfo,name='pinfo'),
+    path('atinfo',views.atinfo,name='atinfo'),
+    path('bladd',views.bladd,name='bladd'),
+    path('bldata',views.bldata,name='bldata'),
+    path('bltab',views.bltab,name='bltab'),
+    path('blu/<int:bd>',views.blu,name='blu'),
+    path('blup/<int:bd>',views.blup,name='blup'),
+    path('bldl/<int:bd>',views.bldl,name='bldl'),
+    path('preq',views.preq,name='preq'),
+    path('pa',views.pa,name='pa'),
+    path('papr/<int:id>',views.papr,name='papr'),
+    path('pd',views.pd,name='pd'),
+    path('pdec/<int:id>',views.pdec,name='pdec'),
+    path('atreq',views.atreq,name='atreq'),
+    path('ata',views.ata,name='ata'),
+    path('atapr/<int:id>',views.atapr,name='atapr'),
+    path('atd',views.atd,name='atd'),
+    path('atdec/<int:id>',views.atdec,name='atdec'),
+    path('pbks',views.pbks,name='pbks'),
+    path('abks',views.abks,name='abks'),
+]

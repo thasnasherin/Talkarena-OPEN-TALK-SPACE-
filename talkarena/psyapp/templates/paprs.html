@@ -1,0 +1,23 @@
+{% extends 'psyindx.html' %}
+{% block pcnt %}
+<div class="card-block table-border-style">
+    <div class="table-responsive">
+        <table class="table table-inverse">
+            <thead>
+                <tr>
+                    <th>name</th>
+                    <th>mail</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in p %}
+                <tr class="bg-info">
+                    <td>{{i.pname}}</td>
+                    <td>{{i.pmail}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

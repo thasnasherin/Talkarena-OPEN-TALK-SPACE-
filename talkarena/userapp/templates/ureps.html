@@ -1,0 +1,48 @@
+{% extends 'uindx.html' %}
+{% block cnt %}
+
+<section id="faq" class="faq">
+  <div class="container">
+    <div class="row text-center">
+      <h1 class="display-3 fw-bold text-uppercase">Exp Arena</h1>
+      <div class="heading-line"></div>
+      <p class="lead">frequently asked questions, get knowledge befere hand</p>
+    </div>
+    <!-- ACCORDION CONTENT  -->
+    
+    {% for i in ut %}
+    <form >
+      
+    <div class="row mt-5">
+      <div class="col-md-12">
+        <div class="accordion" id="accordionExample">
+           
+          <!-- ACCORDION ITEM 1 -->
+          <div class="accordion-item shadow mb-3">
+            <h2 class="accordion-header" id="headingOne">
+              <!--<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                What are the main features?
+              </button>-->
+              <label class="accordion-button"  data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">{{i.top}}</label>
+            </h2>
+            {% for i in ur %}
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                {{i.rep}}
+                <!--<strong>This is the first item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                <input type="text" placeholder="Enter message" name="rt">-->
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+    </form>
+    <a href="{% url 'uexprep' i.id %}"><button class="btn btn-primary w-100 py-3">Reply</button></a>
+    {% endfor %}
+
+  </div>
+</section>
+
+{% endblock %}

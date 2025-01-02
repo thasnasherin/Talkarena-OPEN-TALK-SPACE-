@@ -1,0 +1,41 @@
+{% extends 'uindx.html' %}
+{% block cnt %}
+<div id="pricing" class="pricing-tables">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 offset-lg-2">
+        <div class="section-heading">
+          <h4>you can check your <em>Boooking History status</em> Here</h4>
+          <img src="assets/images/heading-line-dec.png" alt="">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eismod tempor incididunt ut labore et dolore magna.</p>
+        </div>
+      </div>
+      {% for i in st %}
+      <div class="col-lg-4">
+        <div class="pricing-item-regular">
+          <!--<span class="price">$12</span>-->
+          <h4>{{i.aid.atname}}</h4>
+          <div class="icon">
+            <img src="{{i.aid.atprf.url}}" alt="">
+          </div>
+          <ul>
+            <li>{{i.dte}}</li>
+            <li>{{i.tme}}</li>
+          </ul>
+          {% if i.status == 1 %}
+          <h6>Request Accepted</h6>
+          {% elif i.status == 2 %}
+          <h6>Request Denied</h6>
+          {% else %}
+          <h6>Request waiting</h6>
+          {% endif %}
+          <!--<div class="border-button">
+            <a href="">View More Info</a>
+          </div>-->
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% endblock %}

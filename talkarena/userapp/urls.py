@@ -1,0 +1,30 @@
+from django.urls import path
+from userapp import views
+
+urlpatterns = [
+    path('',views.ui,name='ui'),
+    path('abt',views.abt,name='abt'),
+    path('log',views.log,name='log'),
+    path('reg',views.reg,name='reg'),
+    path('regdata',views.regdata,name='regdata'),
+    path('logdata',views.logdata,name='logdata'),
+    path('logout',views.logout,name='logout'),
+    path('cont',views.cont,name='cont'),
+    path('contdata',views.contdata,name='contdata'),
+    path('pcrd',views.pcrd,name='pcrd'),
+    path('acrd',views.acrd,name='acrd'),
+    path('psng/<int:pd>',views.psng,name='psng'),
+    path('asng/<int:ad>',views.asng,name='asng'),
+    path('papnt/<int:id>',views.papnt,name='papnt'),
+    path('papndata/<int:id>',views.papndata,name='papndata'),
+    path('atapnt/<int:id>',views.atapnt,name='atapnt'),
+    path('atapndata/<int:id>',views.atapndata,name='atapndata'),
+    path('papntst',views.papntst,name='papntst'),
+    path('atapntst',views.atapntst,name='atapntst'),
+    path('uexp',views.uexp,name='uexp'),
+    path('ufrm',views.ufrm,name='ufrm'),
+    path('ufrmdata',views.ufrmdata,name='ufrmdata'),
+    path('uexprep/<int:id>',views.uexprep,name='uexprep'),
+    path('repdata/<int:id>',views.repdata,name='repdata'),
+    path('ureps/<int:id>',views.ureps,name='ureps'),
+    ]

@@ -1,0 +1,34 @@
+{% extends 'aindx.html' %}
+{% block cnt %}
+<div class="card-block table-border-style">
+    <div class="table-responsive">
+        <table class="table table-inverse">
+            <thead>
+                <tr>
+                    <th>Psy Name</th>
+                    <th>Psy Mail</th>
+                    <th>Psy Qualification</th>
+                    <th>Psy Experience</th>
+                    <th>Psy Gender</th>
+                    <th>Psy Proof</th>
+                    <th>Password</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in inf %}
+                <tr class="bg-info">
+                    <!--<th scope="row"></th>-->
+                    <td>{{i.pname}}</td>
+                    <td>{{i.pmail}}</td>
+                    <td>{{i.pqual}}</td>
+                    <td>{{i.pexp}}</td>
+                    <td>{{i.pgen}}</td>
+                    <td><img src='{{i.pprf.url}}' height='60px' width="auto"></td>
+                    <td>{{i.ppsw}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

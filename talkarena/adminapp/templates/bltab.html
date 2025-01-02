@@ -1,0 +1,26 @@
+{% extends 'aindx.html' %}
+{% block cnt %}
+<div class="card-block table-border-style">
+    <div class="table-responsive">
+        <table class="table table-inverse">
+            <thead>
+                <tr>
+                    <th>Words</th>
+                    <th>Edit</th>
+                    <th>Del</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in inf %}
+                <tr class="bg-info">
+                    <!--<th scope="row">1</th>-->
+                    <td>{{i.bwrd}}</td>
+                    <td><a href="{% url 'blu' i.id %}"><button class="btn btn-primary">edit</button></a></td>
+                    <td><a href="{% url 'bldl' i.id %}"><button class="btn btn-primary">del</button></a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

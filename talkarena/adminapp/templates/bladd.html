@@ -1,0 +1,16 @@
+{% extends 'aindx.html' %}
+{% block cnt %}
+<div class="bg-secondary rounded h-100 p-4">
+    <h6 class="mb-4">Bully Words</h6>
+    <form action="{% url 'bldata' %}" method="post">
+        {% csrf_token %}
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="floatingInput" placeholder="Enter words" name="bl">
+            <label for="floatingInput">Words</label>
+        </div>
+        <div class="form-floating mb-3">
+            <button type="submit" class="btn btn-primary">Add</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

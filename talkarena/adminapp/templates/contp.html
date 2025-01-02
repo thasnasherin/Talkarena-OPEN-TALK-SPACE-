@@ -1,0 +1,28 @@
+{% extends 'aindx.html' %}
+{% block cnt %}
+<div class="card-block table-border-style">
+    <div class="table-responsive">
+        <table class="table table-inverse">
+            <thead>
+                <tr>
+                    <th>User Name</th>
+                    <th>Mail</th>
+                    <th>Subject</th>
+                    <th>Message</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in inf %}
+                <tr class="bg-info">
+                    <!--<th scope="row"></th>-->
+                    <td>{{i.cname}}</td>
+                    <td>{{i.cmail}}</td>
+                    <td>{{i.csub}}</td>
+                    <td>{{i.cmsg}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

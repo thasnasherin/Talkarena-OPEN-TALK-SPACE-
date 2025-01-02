@@ -1,0 +1,28 @@
+{% extends 'aindx.html' %}
+{% block cnt %}
+<div class="card-block table-border-style">
+    <div class="table-responsive">
+        <table class="table table-inverse">
+            <thead>
+                <tr>
+                    <th>Auth Name</th>
+                    <th>Auth Mail</th>
+                    <th>Auth Proof</th>
+                    <th>Password</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in inf %}
+                <tr class="bg-info">
+                    <!--<th scope="row"></th>-->
+                    <td>{{i.atname}}</td>
+                    <td>{{i.atmail}}</td>
+                    <td><img src='{{i.atprf.url}}' height='60px' width="auto"></td>
+                    <td>{{i.atpsw}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}
